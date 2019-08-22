@@ -1,0 +1,61 @@
+.btn-blue {
+  @apply bg-blue-500 text-white font-bold py-2 px-4 rounded;
+  transition: .2s all;
+}
+.btn-blue:hover {
+  @apply bg-blue-700;
+}
+
+/* navigation MOBILE FIRST */
+.toggled .nav-menu {
+  @apply flex-col flex;
+}
+.nav-menu {
+  display: none;
+  list-style: none;
+  transition: all .3s;
+}
+.menu-item {
+  display: flex;
+  list-style-type: none;
+  @apply block mt-4 inline-block mt-0 mr-4;
+}
+.menu-item:hover {
+  @apply text-white;
+}
+.toggle {
+  background-color: transparent;
+  background-image: none; /* Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214 */
+}
+.nav-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  transition: all .3s;
+}
+.nav-bar + .nav-bar {
+  margin-top: 4px;
+}
+.toggled .nav-bar:nth-of-type(1) {
+    -webkit-transform: translateY(6px) translateX(0px) rotate(45deg);
+    transform: translateY(6px) translateX(0px) rotate(45deg);
+}
+.toggled .nav-bar:nth-of-type(2) {
+    display: none;
+}
+.toggled .nav-bar:nth-of-type(3) {
+    -webkit-transform: translateY(0px) translateX(0px) rotate(-45deg);
+    transform: translateY(0px) translateX(0px) rotate(-45deg);
+}
+
+@media (min-width: 640px) {
+  .nav-menu {
+
+  }
+}
+@media (min-width: 768px) {
+  .nav-menu {
+    @apply flex;
+  }
+}

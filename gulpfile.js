@@ -1,8 +1,9 @@
 const gulp = require('gulp');
+const apply = require('postcss-apply');
 const autoprefixer = require('autoprefixer');
 const browserSync = require('browser-sync').create();
 const concat = require('gulp-concat');
-const cssnano = require('cssnano');
+//const cssnano = require('cssnano');
 const plumber = require("gulp-plumber");
 const postcss = require('gulp-postcss');
 const atImport = require("postcss-import");
@@ -12,11 +13,12 @@ const tailwindcss = require('tailwindcss');
 function css() {
   var plugins = [
     autoprefixer({browsers: ['last 2 versions']}),
-    atImport(),
-    tailwindcss('./tailwind.js'),
-    cssnano({
-      preset: 'default',
-    })
+    atImport,
+    apply,
+    tailwindcss('./tailwind.config.js')
+    // cssnano({
+    //   preset: 'default',
+    // })
   ];
   return gulp
     .src('src/css/style.css')
@@ -43,7 +45,7 @@ function browser() {
       './**/*.php'
     ]
   });
-  gulp.watch('./src/css/*.css', css);
+  gulp.watch(['./src/css/**/*.css', 'tailwind.config.js'], css);
   gulp.watch('./src/js/*.js', js).on('change', browserSync.reload);
 };
 

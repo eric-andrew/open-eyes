@@ -15,6 +15,16 @@
 get_header();
 ?>
 
+	<?php if ( get_header_image() ) : ?>
+	  <div id="masthead" class="" style="background-image:url('<?php header_image(); ?>'); height:60vh; width:100vw; background-size:cover; background-repeat:no-repeat">
+	  <?php endif;
+		$open_eyes_description = get_bloginfo( 'description', 'display' );
+		if ( $open_eyes_description || is_customize_preview() ) :
+			?>
+			<h1 class="text-6xl"><?php echo $open_eyes_description;?></h1>
+		</div>
+	<?php endif; ?>
+
 	<div id="primary" class="content-area">
 		<main id="main" class="container mx-auto">
 
@@ -55,5 +65,5 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
+
 get_footer();

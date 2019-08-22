@@ -15,6 +15,13 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'footer-nav',
+					'container'      => 'ul',
+					'items_wrap'     => '%3$s',
+				) );
+				?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'open-eyes' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */

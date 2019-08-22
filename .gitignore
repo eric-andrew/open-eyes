@@ -1,7 +1,7 @@
 node_modules
 build
 vendor
-.package-lock.json
+package-lock.json
 style-underscores-boilerplate.css
 .DS_Store
 */.DS_Store

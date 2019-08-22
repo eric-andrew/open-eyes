@@ -19,7 +19,7 @@
 function open_eyes_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'open_eyes_custom_header_args', array(
 		'default-image'          => '',
-		'default-text-color'     => '000000',
+		'default-text-color'     => '1a202c',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
